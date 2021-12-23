@@ -1,0 +1,50 @@
+/* ContactManager Css */
+h1 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 40px 0;
+}
+
+/* Todo Css */
+.todo {
+  margin-bottom: 20px;
+}
+.form {
+  text-align: center;
+  margin-top: 50px;
+}
+.todo input {
+  margin-right: 10px;
+  padding: 6px;
+  outline: none;
+}
+.display-todo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.todos {
+  display: flex;
+  margin-top: 30px;
+  border-radius: 5px;
+  box-shadow: 2px 3px 4px silver;
+}
+.text {
+  width: 350px;
+  margin-left: 4px;
+}
+.actions button {
+  margin-left: 5px;
+}
+/* .actions {
+  width: 140px;
+} */
+.btn-group {
+  display: flex;
+
+}
+.btn-group Button{
+  margin: 10px;
+}

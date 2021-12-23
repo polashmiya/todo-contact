@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import { useState } from "react";
+import ContactManager from "./ContactManager";
+import Todo from "./Todo";
+import { Button } from "react-bootstrap";
+const App = () => {
+  const [openTodo, setOpenTodo] = useState(false);
+  const [openContact, setOpenContact] = useState(false);
+  const todoHandler = () => {
+    if (openContact) {
+      alert("Please Close the Contact First!");
+    } else {
+      setOpenTodo(!openTodo);
+    }
+  };
+  const contactHandler = () => {
+    if (openTodo) {
+      alert("Plase Close the Todo Frist!");
+    } else {
+      setOpenContact(!openContact);
+    }
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <d>
+      <div className="btn-group">
+        {openTodo ? (
+          <Button className="btn btn-danger" onClick={todoHandler}>
+            Close Todo
+          </Button>
+        ) : (
+          <Button className="mr-2" onClick={todoHandler}>
+            Open Todo
+          </Button>
+        )}
+        {openContact ? (
+          <Button onClick={contactHandler} className="btn btn-danger">
+            Close Contact Managment
+          </Button>
+        ) : (
+          <Button onClick={contactHandler}>Open Contact Managemnet</Button>
+        )}
+      </div>
+      {openTodo ? <Todo /> : null}
+      {openContact ? <ContactManager /> : null}
+    </d>
   );
-}
+};
 
 export default App;
